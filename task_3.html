@@ -1,0 +1,33 @@
+/*3. Перед вами находится массив с продуктами, сегодня распродажа и вам нужно на каждый 
+товар применить скидку 15%*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        const products = [
+            {
+                id: 3,
+                price: 200
+            },
+            {
+                id: 4,
+                price: 900
+            },
+            {
+                id: 1,
+                price: 1000
+            },
+        ];
+        for (let item of products) {
+            let discount = item.price - item.price * 0.15;
+            item.price = discount;
+        }
+        console.log(products);
+    </script>
+</body>
+</html>
