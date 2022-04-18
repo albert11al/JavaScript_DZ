@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function NumberToObject(number) {
+            let ListNum = number.split('');
+            let ObjectNum = {};
+            if (isNaN(number) || number < 0 || number > 999) {
+                console.log("Ошибка! Вы ввели число не диапазона или вообще не число");
+                return ObjectNum;
+            } else {
+                if (ListNum.length == 3) {
+                    ObjectNum.units = parseInt(ListNum[0]);
+                    ObjectNum.tens = parseInt(ListNum[1]);
+                    ObjectNum.hundreds = parseInt(ListNum[2]);
+                    return ObjectNum;
+                } else if (ListNum.length < 3) {
+                    for (let i = 3; i >= ListNum.length; i--) {
+                        ListNum.push(0);
+                    }
+                    ObjectNum.units = parseInt(ListNum[0]);
+                    ObjectNum.tens = parseInt(ListNum[1]);
+                    ObjectNum.hundreds = parseInt(ListNum[2]);
+                    return ObjectNum;
+                }
+            }
+        }
+        let num = prompt('Передайте на вход число в диапазоне [0, 999]: ');
+        console.log(NumberToObject(num));
+    </script>
+</body>
+</html>
